@@ -1,18 +1,19 @@
 <div>
   <fieldset>
     <label for="username">Username: </label>
-    <input type="text" id="username" placeholder="Username">
+    <input type="text" id="username" placeholder="Username" [(ngModel)]="credentials.username">
   </fieldset>
   <fieldset>
     <label for="email">Email: </label>
-    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="email" placeholder="Email" [(ngModel)]="credentials.email">
   </fieldset>
   <fieldset>
     <label for="password">Password: </label>
-    <input type="password" id="password">
+    <input type="password" id="password" [(ngModel)]="credentials.password">
   </fieldset>
   <fieldset>
     <label for="verify-password">Verify Password: </label>
-    <input type="password" id="verify-password">
+    <input type="password" id="verify-password" [(ngModel)]="verifyPassword">
   </fieldset>
+  <button (click)="handleClick()">Sign up!</button>
 </div>
