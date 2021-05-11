@@ -23,7 +23,6 @@ export class AuthService {
   register(credentials): void {
     this.http.post(this.baseUrl + '/register', credentials, this.httpOptions)
       .subscribe((response: any) => {
-        console.log(response);
         if (response.status === 201) {
           this.currentUser.next(response.data);
         }
@@ -36,6 +35,13 @@ export class AuthService {
         if (response.status === 200) {
           this.currentUser.next(response.data);
         }
+      });
+  }
+
+  logOut(): void {
+    this.http.get(this.baseUrl + '/logout', this.httpOptions)
+      .subscribe((response: any) => {
+        this.currentUser.next(null);
       });
   }
 }
