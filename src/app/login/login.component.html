@@ -1,0 +1,11 @@
+<div>
+  <fieldset>
+    <label for="email">Email: </label>
+    <input type="text" id="email" placeholder="Email" [(ngModel)]="credentials.email">
+  </fieldset>
+  <fieldset>
+    <label for="password">Password: </label>
+    <input type="password" id="password" [(ngModel)]="credentials.password">
+  </fieldset>
+  <button (click)="handleClick()">Log In!</button>
+</div>

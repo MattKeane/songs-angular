@@ -1,4 +1,5 @@
 <app-signup *ngIf="!currentUser"></app-signup>
+<app-login *ngIf="!currentUser"></app-login>
 <div *ngIf="currentUser">
   <button (click)="logOut()">Log Out</button>
 </div>

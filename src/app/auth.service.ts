@@ -44,4 +44,13 @@ export class AuthService {
         this.currentUser.next(null);
       });
   }
+
+  logIn(credentials): void {
+    this.http.post(this.baseUrl + '/login', credentials, this.httpOptions)
+      .subscribe((response: any) => {
+        if (response.status === 200) {
+          this.currentUser.next(response.data);
+        }
+      });
+  }
 }
