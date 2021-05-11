@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+div {
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+fieldset {
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid black;
+  border-left: 0;
+  font-family: inherit;
+}
