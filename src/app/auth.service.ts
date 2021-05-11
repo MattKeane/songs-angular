@@ -14,8 +14,8 @@ export class AuthService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      credentials: 'include',
-    })
+    }),
+    withCredentials: true,
   };
 
   constructor(private http: HttpClient ) { }
@@ -23,7 +23,17 @@ export class AuthService {
   register(credentials): void {
     this.http.post(this.baseUrl + '/register', credentials, this.httpOptions)
       .subscribe((response: any) => {
+        console.log(response);
         if (response.status === 201) {
+          this.currentUser.next(response.data);
+        }
+      });
+  }
+
+  getCurrentUser(): void {
+    this.http.get(this.baseUrl + '/current_user', this.httpOptions)
+      .subscribe((response: any) => {
+        if (response.status === 200) {
           this.currentUser.next(response.data);
         }
       });
