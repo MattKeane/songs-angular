@@ -29,13 +29,18 @@ export class AuthService {
       });
   }
 
-  getCurrentUser(): void {
-    this.http.get(this.baseUrl + '/current_user', this.httpOptions)
-      .subscribe((response: any) => {
-        if (response.status === 200) {
-          this.currentUser.next(response.data);
-        }
-      });
+  getCurrentUser(): any {
+    return new Observable(subscriber =>
+      this.http.get(this.baseUrl + '/current_user', this.httpOptions)
+        .subscribe((response: any) => {
+          console.log('service works');
+          if (response.status === 200) {
+            this.currentUser.next(response.data);
+          }
+          subscriber.next(response);
+          subscriber.complete();
+        }, err => subscriber.error(err))
+    );
   }
 
   logOut(): void {
