@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+nav {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
