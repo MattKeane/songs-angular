@@ -19,3 +19,15 @@ input {
   border-left: 0;
   font-family: inherit;
 }
+
+a {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}

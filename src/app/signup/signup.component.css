@@ -19,3 +19,14 @@ input {
   border-left: 0;
   font-family: inherit;
 }
+
+a {
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
