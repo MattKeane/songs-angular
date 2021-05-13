@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,17 @@ export class AuthService {
     withCredentials: true,
   };
 
-  constructor(private http: HttpClient ) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    ) { }
 
   register(credentials): void {
     this.http.post(this.baseUrl + '/register', credentials, this.httpOptions)
       .subscribe((response: any) => {
         if (response.status === 201) {
           this.currentUser.next(response.data);
+          this.router.navigate(['/']);
         }
       });
   }
@@ -55,6 +60,7 @@ export class AuthService {
       .subscribe((response: any) => {
         if (response.status === 200) {
           this.currentUser.next(response.data);
+          this.router.navigate(['/']);
         }
       });
   }

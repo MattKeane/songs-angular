@@ -20,12 +20,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authService.currentUser
       .subscribe(user => this.currentUser = user);
-    console.log('Test!');
     this.authService.getCurrentUser()
       .subscribe(response => {
-        console.log('w00t!');
         if (response.status !== 200) {
-          console.log('doot!');
           this.router.navigate(['login']);
         }
       }, err => this.router.navigate(['login']));
