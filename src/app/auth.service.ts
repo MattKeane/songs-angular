@@ -52,6 +52,7 @@ export class AuthService {
     this.http.get(this.baseUrl + '/logout', this.httpOptions)
       .subscribe((response: any) => {
         this.currentUser.next(null);
+        this.router.navigate(['/login']);
       });
   }
 

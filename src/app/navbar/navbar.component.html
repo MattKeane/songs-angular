@@ -4,6 +4,6 @@
     <li>Item 2</li>
     <li>Item 3</li>
     <li>Item 4</li>
-    <li *ngIf="currentUser">Log Out</li>
+    <li *ngIf="currentUser" (click)="logOut()">Log Out</li>
   </ul>
 </nav>
