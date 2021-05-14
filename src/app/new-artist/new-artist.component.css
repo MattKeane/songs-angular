@@ -1,0 +1,19 @@
+.modal-outer {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .75);
+}
+
+.modal-inner {
+  z-index: 2;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+}
