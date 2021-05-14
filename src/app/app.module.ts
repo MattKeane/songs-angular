@@ -8,13 +8,17 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SongListComponent } from './song-list/song-list.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    SongListComponent,
+    ArtistListComponent
   ],
   imports: [
     BrowserModule,

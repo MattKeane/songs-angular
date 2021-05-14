@@ -9,3 +9,11 @@ ul {
   display: flex;
   justify-content: space-around;
 }
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
