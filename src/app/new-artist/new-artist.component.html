@@ -1,6 +1,21 @@
 <div class="modal-outer">
   <div class="modal-inner">
     <h3>Add An Artist</h3>
+    <div class="pseudoform">
+      <fieldset>
+        <label for="name">Artist Name:</label>
+        <input type="text" name="name" id="name">
+      </fieldset>
+      <fieldset>
+        <label for="born">Year Born:</label>
+        <input type="number" name="born" id="born">
+      </fieldset>
+      <fieldset>
+        <label for="alive">Still Alive?</label>
+        <input type="checkbox" name="alive" id="alive">
+      </fieldset>
+      <button>Add New Artist</button>
+    </div>
     <p class="pseudolink" (click)="closeModal()">Close Modal</p>
   </div>
 </div>

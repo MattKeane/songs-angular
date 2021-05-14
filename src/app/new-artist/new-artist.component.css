@@ -32,3 +32,24 @@
 .pseudolink:hover {
   text-decoration: none;
 }
+
+.pseudoform {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+}
+
+fieldset {
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid black;
+  border-left: 0;
+  font-family: inherit;
+}
