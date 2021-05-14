@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-new-artist',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewArtistComponent implements OnInit {
 
+  @Output() closeModalEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  closeModal(): void {
+    this.closeModalEvent.emit();
   }
 
 }

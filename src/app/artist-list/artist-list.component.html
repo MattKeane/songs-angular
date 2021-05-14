@@ -1,4 +1,5 @@
 <ul>
   <li *ngFor="let artist of allArtists">{{ artist.name }}</li>
 </ul>
-<app-new-artist></app-new-artist>
+<p class="pseudolink" *ngIf="currentUser" (click)="toggleNewArtistModal()">Add New Artist</p>
+<app-new-artist *ngIf="showNewArtistModal" (closeModalEvent)="toggleNewArtistModal()"></app-new-artist>

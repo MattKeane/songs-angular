@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .modal-outer {
   z-index: 1;
   position: fixed;
@@ -8,6 +10,7 @@
 }
 
 .modal-inner {
+  font-family: 'Roboto', sans-serif;
   z-index: 2;
   position: fixed;
   top: 25%;
@@ -16,4 +19,16 @@
   width: 50%;
   background-color: white;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.pseudolink {
+  text-decoration: underline;
+}
+
+.pseudolink:hover {
+  text-decoration: none;
 }

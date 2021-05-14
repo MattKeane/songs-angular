@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  currentUser = new Subject();
+  currentUser = new BehaviorSubject(null);
 
   private baseUrl = 'http://localhost:8000/api/v1/auth';
 

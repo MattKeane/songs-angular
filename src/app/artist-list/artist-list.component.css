@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+li {
+  font-family: 'Roboto', sans-serif
+}
+
+.pseudolink {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: underline;
+}
+
+.pseudolink:hover {
+  text-decoration: none;
+}
