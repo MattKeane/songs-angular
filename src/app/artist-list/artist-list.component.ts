@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistService } from '../artist.service';
 
 @Component({
   selector: 'app-artist-list',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artist-list.component.css']
 })
 export class ArtistListComponent implements OnInit {
+  allArtists: any[] = [];
 
-  constructor() { }
+  constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
+    this.artistService.allArtists.subscribe(allArtists => this.allArtists = allArtists);
+    this.artistService.getAllArtists();
   }
 
 }
