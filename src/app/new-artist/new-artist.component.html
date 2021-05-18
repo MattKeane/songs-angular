@@ -4,17 +4,17 @@
     <div class="pseudoform">
       <fieldset>
         <label for="name">Artist Name:</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" [(ngModel)]="newArtist.name">
       </fieldset>
       <fieldset>
         <label for="born">Year Born:</label>
-        <input type="number" name="born" id="born">
+        <input type="number" name="born" id="born" [(ngModel)]="newArtist.born">
       </fieldset>
       <fieldset>
         <label for="alive">Still Alive?</label>
-        <input type="checkbox" name="alive" id="alive">
+        <input type="checkbox" name="alive" id="alive" (change)="newArtist.still_alive = !newArtist.still_alive" [checked]="newArtist.still_alive">
       </fieldset>
-      <button>Add New Artist</button>
+      <button (click)="createNewArtist()">Add New Artist</button>
     </div>
     <p class="pseudolink" (click)="closeModal()">Close Modal</p>
   </div>

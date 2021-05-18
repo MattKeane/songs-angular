@@ -28,4 +28,15 @@ export class ArtistService {
         }
       });
   }
+
+  createArtist(newArtist): void {
+    this.http.post(this.baseUrl + '/', newArtist, this.httpOptions)
+      .subscribe((res: any) => {
+        if (res.status === 201) {
+          const allArtists = this.allArtists.getValue();
+          allArtists.push(res.data);
+          this.allArtists.next(allArtists);
+        }
+      });
+  }
 }
