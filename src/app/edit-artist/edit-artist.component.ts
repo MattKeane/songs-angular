@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from '../artist.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-artist',
@@ -16,6 +16,7 @@ export class EditArtistComponent implements OnInit {
   constructor(
     private artistService: ArtistService,
     private route: ActivatedRoute,
+    private router: Router,
     ) { }
 
   ngOnInit(): void {
@@ -23,9 +24,16 @@ export class EditArtistComponent implements OnInit {
     this.artistService.allArtists.subscribe(allArtists => {
       const foundArtist = allArtists.find(artist => artist.id === id);
       if (foundArtist) {
-        this.artistToEdit = foundArtist;
+        this.artistToEdit = { ...foundArtist };
+        delete this.artistToEdit.added_by;
       }
     });
+  }
+
+  updateArtist(): void {
+    this.artistToEdit.born = +this.artistToEdit.born;
+    this.artistService.updateArtist(this.artistToEdit);
+    this.router.navigate(['/artists']);
   }
 
 }

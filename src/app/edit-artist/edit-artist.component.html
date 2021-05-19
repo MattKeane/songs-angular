@@ -14,7 +14,7 @@
         <label for="alive">Still Alive?</label>
         <input type="checkbox" name="alive" id="alive" (change)="artistToEdit.still_alive = !artistToEdit.still_alive" [checked]="artistToEdit.still_alive">
       </fieldset>
-      <button>Add New Artist</button>
+      <button (click)="updateArtist()">Update Artist</button>
     </div>
     <a class="pseudolink" routerLink="/artists">Close Modal</a>
   </div>

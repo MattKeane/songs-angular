@@ -39,4 +39,18 @@ export class ArtistService {
         }
       });
   }
+
+  updateArtist(artistToUpdate): void {
+    const id = artistToUpdate.id;
+    delete artistToUpdate.id;
+    this.http.put(this.baseUrl + `/${id}`, artistToUpdate, this.httpOptions)
+      .subscribe((res: any) => {
+        if (res.status === 200) {
+          const allArtists = this.allArtists.getValue();
+          const artistIndex = allArtists.findIndex(artist => artist.id === id);
+          allArtists[artistIndex] = res.data;
+          this.allArtists.next(allArtists);
+        }
+      });
+  }
 }
