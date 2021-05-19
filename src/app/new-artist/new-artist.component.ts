@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { ArtistService } from '../artist.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-artist',
@@ -13,21 +14,18 @@ export class NewArtistComponent implements OnInit {
     still_alive: true,
   };
 
-  @Output() closeModalEvent = new EventEmitter();
-
-  constructor(private artistService: ArtistService) { }
+  constructor(
+    private artistService: ArtistService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
-  }
-
-  closeModal(): void {
-    this.closeModalEvent.emit();
   }
 
   createNewArtist(): void {
     this.newArtist.born = +this.newArtist.born;
     this.artistService.createArtist(this.newArtist);
-    this.closeModalEvent.emit();
+    this.router.navigate(['/artists'])
   }
 
 }

@@ -8,7 +8,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./artist-list.component.css']
 })
 export class ArtistListComponent implements OnInit {
-  showNewArtistModal = false;
   currentUser: any;
 
   allArtists: any[] = [];
@@ -22,10 +21,6 @@ export class ArtistListComponent implements OnInit {
     this.authService.currentUser.subscribe(currentUser => this.currentUser = currentUser);
     this.artistService.allArtists.subscribe(allArtists => this.allArtists = allArtists);
     this.artistService.getAllArtists();
-  }
-
-  toggleNewArtistModal(): void {
-    this.showNewArtistModal = !this.showNewArtistModal;
   }
 
 }
