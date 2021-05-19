@@ -1,5 +1,21 @@
 <div class="modal-outer">
   <div class="modal-inner">
-    <h2>This is the edit modal</h2>
+    <h3>Edit Artist</h3>
+    <div class="pseudoform">
+      <fieldset>
+        <label for="name">Artist Name:</label>
+        <input type="text" name="name" id="name" [(ngModel)]="artistToEdit.name">
+      </fieldset>
+      <fieldset>
+        <label for="born">Year Born:</label>
+        <input type="number" name="born" id="born" [(ngModel)]="artistToEdit.born">
+      </fieldset>
+      <fieldset>
+        <label for="alive">Still Alive?</label>
+        <input type="checkbox" name="alive" id="alive" (change)="artistToEdit.still_alive = !artistToEdit.still_alive" [checked]="artistToEdit.still_alive">
+      </fieldset>
+      <button>Add New Artist</button>
+    </div>
+    <a class="pseudolink" routerLink="/artists">Close Modal</a>
   </div>
 </div>
