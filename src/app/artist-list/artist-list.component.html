@@ -1,5 +1,6 @@
 <ul>
-  <li *ngFor="let artist of allArtists">{{ artist.name }}</li>
+  <li *ngFor="let artist of allArtists">{{ artist.name }}<a *ngIf="currentUser && artist.added_by.id === currentUser.id" href="">Edit</a></li>
 </ul>
-<p class="pseudolink" *ngIf="currentUser" (click)="toggleNewArtistModal()">Add New Artist</p>
-<app-new-artist *ngIf="showNewArtistModal" (closeModalEvent)="toggleNewArtistModal()"></app-new-artist>
+<a class="pseudolink" *ngIf="currentUser" routerLink="/artists/new">Add New Artist</a>
+<!--<app-new-artist *ngIf="showNewArtistModal" (closeModalEvent)="toggleNewArtistModal()"></app-new-artist>-->
+<router-outlet></router-outlet>
