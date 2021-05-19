@@ -12,6 +12,7 @@ import { SongListComponent } from './song-list/song-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { NewSongComponent } from './new-song/new-song.component';
 import { NewArtistComponent } from './new-artist/new-artist.component';
+import { EditArtistComponent } from './edit-artist/edit-artist.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NewArtistComponent } from './new-artist/new-artist.component';
     SongListComponent,
     ArtistListComponent,
     NewSongComponent,
-    NewArtistComponent
+    NewArtistComponent,
+    EditArtistComponent
   ],
   imports: [
     BrowserModule,

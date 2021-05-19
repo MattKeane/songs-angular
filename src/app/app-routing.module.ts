@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { NewArtistComponent } from './new-artist/new-artist.component';
+import { EditArtistComponent } from './edit-artist/edit-artist.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'new',
         component: NewArtistComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: EditArtistComponent,
       },
     ],
   }
